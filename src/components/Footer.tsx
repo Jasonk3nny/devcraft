@@ -65,7 +65,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
-              <li className="text-gray-400">One-page Websites</li>
+              <li className="text-gray-400">Single Page Application</li>
               <li className="text-gray-400">Pimcore CMS Development</li>
               <li className="text-gray-400">Web Applications</li>
               <li className="text-gray-400">E-commerce Solutions</li>

@@ -17,7 +17,7 @@ export default function Hero() {
               <span className="block text-gradient mt-3 reveal">Experiences</span>
             </h1>
             <p className="mt-6 text-xl text-gray-300 reveal">
-              Specialized in creating stunning one-page websites and robust Pimcore CMS solutions. Let's bring your digital vision to life with clean code and beautiful design.
+              Specialized in creating stunning single page applications and robust Pimcore CMS solutions. Let's bring your digital vision to life with clean code and beautiful design.
             </p>
             <div className="mt-10 reveal">
               <a href="#contact" className="btn group bg-gradient-to-r from-blue-600 to-indigo-600">
@@ -33,7 +33,7 @@ export default function Hero() {
               <div className="relative grid grid-cols-2 gap-6">
                 <div className="flex flex-col items-center p-6 bg-white/5 rounded-xl hover-card shine">
                   <Monitor className="h-10 w-10 text-blue-400" />
-                  <p className="mt-4 font-medium text-white">One-page Sites</p>
+                  <p className="mt-4 font-medium text-white">Single Page Application</p>
                 </div>
                 <div className="flex flex-col items-center p-6 bg-white/5 rounded-xl hover-card shine">
                   <Database className="h-10 w-10 text-blue-400" />

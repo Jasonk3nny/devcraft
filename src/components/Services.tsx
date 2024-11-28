@@ -24,7 +24,7 @@ export default function Services() {
               <div className="relative p-8 bg-white rounded-xl shadow-lg leading-none flex items-top justify-start space-x-6 hover-card">
                 <Layout className="w-8 h-8 text-blue-600" />
                 <div className="space-y-4">
-                  <h3 className="text-xl font-bold text-gray-900">One-page Websites</h3>
+                  <h3 className="text-xl font-bold text-gray-900">Single Page Application</h3>
                   <ul className="space-y-2 text-gray-600">
                     <li className="flex items-center">
                       <span className="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
