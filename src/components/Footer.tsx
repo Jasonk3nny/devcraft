@@ -1,7 +1,9 @@
 import React from 'react';
 import { Code2, Mail, ArrowRight } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Footer() {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -15,7 +17,7 @@ export default function Footer() {
               <span className="ml-2 text-xl font-bold">DevCraft</span>
             </div>
             <p className="text-gray-400">
-              Crafting exceptional digital experiences with clean code and beautiful design.
+              {t('footerSubtitle')}
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-blue-500 transition-colors">
@@ -44,19 +46,19 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#home" className="text-gray-400 hover:text-blue-500 transition-colors">Home</a>
+                <a href="#home" className="text-gray-400 hover:text-blue-500 transition-colors">{t('home')}</a>
               </li>
               <li>
-                <a href="#services" className="text-gray-400 hover:text-blue-500 transition-colors">Services</a>
+                <a href="#services" className="text-gray-400 hover:text-blue-500 transition-colors">{t('services')}</a>
               </li>
               <li>
-                <a href="#portfolio" className="text-gray-400 hover:text-blue-500 transition-colors">Portfolio</a>
+                <a href="#portfolio" className="text-gray-400 hover:text-blue-500 transition-colors">{t('portfolio')}</a>
               </li>
               <li>
-                <a href="#about" className="text-gray-400 hover:text-blue-500 transition-colors">About</a>
+                <a href="#about" className="text-gray-400 hover:text-blue-500 transition-colors">{t('about')}</a>
               </li>
               <li>
-                <a href="#contact" className="text-gray-400 hover:text-blue-500 transition-colors">Contact</a>
+                <a href="#contact" className="text-gray-400 hover:text-blue-500 transition-colors">{t('contact')}</a>
               </li>
             </ul>
           </div>
@@ -65,11 +67,11 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
-              <li className="text-gray-400">Single Page Application</li>
-              <li className="text-gray-400">Pimcore CMS Development</li>
-              <li className="text-gray-400">Web Applications</li>
-              <li className="text-gray-400">E-commerce Solutions</li>
-              <li className="text-gray-400">Performance Optimization</li>
+              <li className="text-gray-400">{t('footerSpa')}</li>
+              <li className="text-gray-400">{t('footerPimcore')}</li>
+              <li className="text-gray-400">{t('footerWebApp')}</li>
+              <li className="text-gray-400">{t('footerEcommerce')}</li>
+              <li className="text-gray-400">{t('footerWPO')}</li>
             </ul>
           </div>
 
@@ -77,7 +79,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Newsletter</h3>
             <p className="text-gray-400 mb-4">
-              Subscribe to stay updated with the latest web development trends and tips.
+              {t('footerNewsletterText')}
             </p>
             <form className="flex">
               <div className="relative flex-grow">

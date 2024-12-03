@@ -1,18 +1,21 @@
 import React from 'react';
 import { Code2, Globe, Coffee, Laptop } from 'lucide-react';
 import { AnimatedSection } from './AnimatedSection';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function About() {
+  const { t } = useLanguage();
+  
   return (
     <section id="about" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <div className="text-center">
             <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-              About Me
+              {t('aboutTitle')}
             </h2>
             <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
-              Passionate about creating exceptional digital experiences
+              {t('aboutSubtitle')}
             </p>
           </div>
         </AnimatedSection>
@@ -30,7 +33,7 @@ export default function About() {
               <div className="absolute -bottom-6 -right-6 bg-blue-600 rounded-lg p-6 shadow-xl">
                 <div className="flex items-center space-x-2 text-white">
                   <Code2 className="h-6 w-6" />
-                  <span className="text-lg font-semibold">5+ Years Experience</span>
+                  <span className="text-lg font-semibold">{t('aboutExperience')}</span>
                 </div>
               </div>
             </div>
@@ -38,35 +41,35 @@ export default function About() {
 
           <AnimatedSection className="space-y-8">
             <div className="prose prose-lg">
-              <h3 className="text-2xl font-bold text-gray-900">Hi, I'm Jason Kenny</h3>
+              <h3 className="text-2xl font-bold text-gray-900">{t('aboutIntroduction')}</h3>
               <p className="text-gray-600 mt-4">
-                As a full-stack web developer based in Salzburg, Austria, I specialize in crafting beautiful, functional websites that help businesses succeed online. With over 5 years of experience in web development, I've developed a deep understanding of both front-end and back-end technologies.
+                {t('aboutDescription')}
               </p>
               <p className="text-gray-600 mt-4">
-                My expertise lies in creating one-page websites that tell compelling stories and Pimcore CMS implementations that make content management a breeze. I believe in writing clean, maintainable code and creating user experiences that delight and engage.
+                {t('aboutDescription2')}
               </p>
             </div>
 
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-gray-50 p-6 rounded-xl">
                 <Globe className="h-8 w-8 text-blue-600 mb-4" />
-                <h4 className="font-semibold text-gray-900">Modern Tech Stack</h4>
-                <p className="text-gray-600 mt-2">Using latest web technologies for optimal performance</p>
+                <h4 className="font-semibold text-gray-900">{t('aboutFeature1Title')}</h4>
+                <p className="text-gray-600 mt-2">{t('aboutFeature1Desc')}</p>
               </div>
               <div className="bg-gray-50 p-6 rounded-xl">
                 <Coffee className="h-8 w-8 text-blue-600 mb-4" />
-                <h4 className="font-semibold text-gray-900">Problem Solver</h4>
-                <p className="text-gray-600 mt-2">Turning complex challenges into elegant solutions</p>
+                <h4 className="font-semibold text-gray-900">{t('aboutFeature2Title')}</h4>
+                <p className="text-gray-600 mt-2">{t('aboutFeature2Desc')}</p>
               </div>
               <div className="bg-gray-50 p-6 rounded-xl">
                 <Laptop className="h-8 w-8 text-blue-600 mb-4" />
-                <h4 className="font-semibold text-gray-900">Responsive Design</h4>
-                <p className="text-gray-600 mt-2">Ensuring perfect display across all devices</p>
+                <h4 className="font-semibold text-gray-900">{t('aboutFeature3Title')}</h4>
+                <p className="text-gray-600 mt-2">{t('aboutFeature3Desc')}</p>
               </div>
               <div className="bg-gray-50 p-6 rounded-xl">
                 <Code2 className="h-8 w-8 text-blue-600 mb-4" />
-                <h4 className="font-semibold text-gray-900">Clean Code</h4>
-                <p className="text-gray-600 mt-2">Writing maintainable, efficient code</p>
+                <h4 className="font-semibold text-gray-900">{t('aboutFeature4Title')}</h4>
+                <p className="text-gray-600 mt-2">{t('aboutFeature4Desc')}</p>
               </div>
             </div>
 

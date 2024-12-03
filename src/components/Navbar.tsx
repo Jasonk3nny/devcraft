@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Code2 } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,14 +27,15 @@ export default function Navbar() {
             <span className={`ml-2 text-xl font-bold ${isScrolled ? 'text-gray-900' : 'text-white'}`}>DevCraft</span>
           </div>
           
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
-              <a href="#home" className={`${isScrolled ? 'text-gray-900 hover:text-blue-600' : 'text-white hover:text-blue-200'} px-3 py-2 rounded-md text-sm font-medium`}>Home</a>
-              <a href="#services" className={`${isScrolled ? 'text-gray-900 hover:text-blue-600' : 'text-white hover:text-blue-200'} px-3 py-2 rounded-md text-sm font-medium`}>Services</a>
-              <a href="#portfolio" className={`${isScrolled ? 'text-gray-900 hover:text-blue-600' : 'text-white hover:text-blue-200'} px-3 py-2 rounded-md text-sm font-medium`}>Portfolio</a>
-              <a href="#about" className={`${isScrolled ? 'text-gray-900 hover:text-blue-600' : 'text-white hover:text-blue-200'} px-3 py-2 rounded-md text-sm font-medium`}>About</a>
-              <a href="#contact" className="bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+          <div className="hidden md:flex md:items-center md:space-x-8">
+            <div className="flex items-baseline space-x-4">
+              <a href="#home" className={`${isScrolled ? 'text-gray-900 hover:text-blue-600' : 'text-white hover:text-blue-200'} px-3 py-2 rounded-md text-sm font-medium`}>{t('home')}</a>
+              <a href="#services" className={`${isScrolled ? 'text-gray-900 hover:text-blue-600' : 'text-white hover:text-blue-200'} px-3 py-2 rounded-md text-sm font-medium`}>{t('services')}</a>
+              <a href="#portfolio" className={`${isScrolled ? 'text-gray-900 hover:text-blue-600' : 'text-white hover:text-blue-200'} px-3 py-2 rounded-md text-sm font-medium`}>{t('portfolio')}</a>
+              <a href="#about" className={`${isScrolled ? 'text-gray-900 hover:text-blue-600' : 'text-white hover:text-blue-200'} px-3 py-2 rounded-md text-sm font-medium`}>{t('about')}</a>
+              <a href="#contact" className="bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded-md text-sm font-medium transition-colors">{t('contact')}</a>
             </div>
+            <LanguageSwitcher />
           </div>
           
           <div className="md:hidden">
@@ -50,11 +54,14 @@ export default function Navbar() {
       {isMenuOpen && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
-            <a href="#home" className="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Home</a>
-            <a href="#services" className="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Services</a>
-            <a href="#portfolio" className="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Portfolio</a>
-            <a href="#about" className="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">About</a>
-            <a href="#contact" className="bg-blue-600 text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            <a href="#home" className="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">{t('home')}</a>
+            <a href="#services" className="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">{t('services')}</a>
+            <a href="#portfolio" className="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">{t('portfolio')}</a>
+            <a href="#about" className="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">{t('about')}</a>
+            <a href="#contact" className="bg-blue-600 text-white block px-3 py-2 rounded-md text-base font-medium">{t('contact')}</a>
+            <div className="px-3 py-2">
+              <LanguageSwitcher />
+            </div>
           </div>
         </div>
       )}

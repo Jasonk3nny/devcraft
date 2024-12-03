@@ -1,24 +1,27 @@
 import React from 'react';
 import { ExternalLink } from 'lucide-react';
 import { AnimatedSection } from './AnimatedSection';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Portfolio() {
+  const { t } = useLanguage();
+  
   const projects = [
     {
-      title: "E-commerce Platform",
-      description: "A full-featured online store built with Pimcore CMS",
+      title: 'portfolio1Title',
+      description: 'portfolio1Text',
       image: "https://images.unsplash.com/photo-1661956602116-aa6865609028?auto=format&fit=crop&q=80&w=800&h=600",
       tags: ["Pimcore", "E-commerce", "PHP"]
     },
     {
-      title: "Corporate Website",
-      description: "One-page website for a financial consulting firm",
+      title: 'portfolio2Title',
+      description: 'portfolio2Text',
       image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800&h=600",
       tags: ["One-page", "React", "Animation"]
     },
     {
-      title: "Digital Agency",
-      description: "Modern website with parallax effects",
+      title: 'portfolio3Title',
+      description: 'portfolio3Text',
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800&h=600",
       tags: ["Design", "Frontend", "Animation"]
     }
@@ -30,10 +33,10 @@ export default function Portfolio() {
         <AnimatedSection>
           <div className="text-center">
             <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-              Featured Projects
+              {t('portfolioTitle')}
             </h2>
             <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
-              Discover some of my recent work
+             {t('portfolioSubtitle')}
             </p>
           </div>
         </AnimatedSection>
@@ -57,8 +60,8 @@ export default function Portfolio() {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-bold text-gray-900">{project.title}</h3>
-                <p className="mt-2 text-gray-600">{project.description}</p>
+                <h3 className="text-lg font-bold text-gray-900">{t(project.title)}</h3>
+                <p className="mt-2 text-gray-600">{t(project.description)}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {project.tags.map((tag, tagIndex) => (
                     <span

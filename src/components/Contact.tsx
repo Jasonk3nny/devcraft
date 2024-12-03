@@ -3,8 +3,10 @@ import { Mail, Phone, MapPin, Send, Loader2 } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import toast, { Toaster } from 'react-hot-toast';
 import { AnimatedSection } from './AnimatedSection';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Contact() {
+  const { t } = useLanguage();
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -52,17 +54,17 @@ export default function Contact() {
         <AnimatedSection>
           <div className="text-center">
             <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-              Let's Work Together
+              {t('contactTitle')}
             </h2>
             <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
-              Ready to start your project? Get in touch and let's create something amazing.
+              {t('contactSubtitle')}
             </p>
           </div>
         </AnimatedSection>
 
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8">
           <AnimatedSection className="bg-white rounded-lg shadow-lg p-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">Contact Information</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-8">{t('contactInfo')}</h3>
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
                 <Mail className="h-6 w-6 text-blue-600" />
@@ -79,7 +81,7 @@ export default function Contact() {
             </div>
 
             <div className="mt-8">
-              <h4 className="text-lg font-semibold text-gray-900 mb-4">Follow Me</h4>
+              <h4 className="text-lg font-semibold text-gray-900 mb-4">{t('followMe')}</h4>
               <div className="flex space-x-4">
                 <a 
                   href="#" 
@@ -116,7 +118,7 @@ export default function Contact() {
             <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-lg p-8 space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                  Name
+                 {t('name')}
                 </label>
                 <input
                   type="text"
@@ -130,7 +132,7 @@ export default function Contact() {
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                  Email
+                  {t('email')}
                 </label>
                 <input
                   type="email"
@@ -144,7 +146,7 @@ export default function Contact() {
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700">
-                  Message
+                  {t('message')}
                 </label>
                 <textarea
                   name="message"
@@ -164,11 +166,11 @@ export default function Contact() {
                 {isLoading ? (
                   <>
                     <Loader2 className="animate-spin mr-2 h-4 w-4" />
-                    Sending...
+                    {t('sending')}
                   </>
                 ) : (
                   <>
-                    Send Message
+                    {t('send')}
                     <Send className="ml-2 h-4 w-4" />
                   </>
                 )}

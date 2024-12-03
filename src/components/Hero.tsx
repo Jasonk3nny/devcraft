@@ -1,7 +1,10 @@
 import React from 'react';
 import { ArrowRight, Monitor, Database, Code } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900">
       {/* Animated background */}
@@ -13,15 +16,15 @@ export default function Hero() {
         <div className="lg:grid lg:grid-cols-12 lg:gap-8">
           <div className="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left">
             <h1 className="text-4xl tracking-tight font-extrabold text-white sm:text-6xl md:text-7xl lg:text-6xl xl:text-7xl">
-              <span className="block reveal">Crafting Digital</span>
-              <span className="block text-gradient mt-3 reveal">Experiences</span>
+              <span className="block reveal">{t('heroTitle')}</span>
+              <span className="block text-gradient mt-3 reveal">{t('heroSubtitle')}</span>
             </h1>
             <p className="mt-6 text-xl text-gray-300 reveal">
-              Specialized in creating stunning single page applications and robust Pimcore CMS solutions. Let's bring your digital vision to life with clean code and beautiful design.
+              {t('heroDescription')}
             </p>
             <div className="mt-10 reveal">
               <a href="#contact" className="btn group bg-gradient-to-r from-blue-600 to-indigo-600">
-                Start a Project
+                {t('startProject')}
                 <ArrowRight className="ml-2 h-5 w-5 transform transition-transform group-hover:translate-x-1" />
               </a>
             </div>
@@ -33,21 +36,21 @@ export default function Hero() {
               <div className="relative grid grid-cols-2 gap-6">
                 <div className="flex flex-col items-center p-6 bg-white/5 rounded-xl hover-card shine">
                   <Monitor className="h-10 w-10 text-blue-400" />
-                  <p className="mt-4 font-medium text-white">Single Page Application</p>
+                  <p className="mt-4 font-medium text-white">{t('spaTitle')}</p>
                 </div>
                 <div className="flex flex-col items-center p-6 bg-white/5 rounded-xl hover-card shine">
                   <Database className="h-10 w-10 text-blue-400" />
-                  <p className="mt-4 font-medium text-white">Pimcore CMS</p>
+                  <p className="mt-4 font-medium text-white">{t('pimcoreTitle')}</p>
                 </div>
                 <div className="flex flex-col items-center p-6 bg-white/5 rounded-xl hover-card shine">
                   <Code className="h-10 w-10 text-blue-400" />
-                  <p className="mt-4 font-medium text-white">Clean Code</p>
+                  <p className="mt-4 font-medium text-white">{t('cleanCodeTitle')}</p>
                 </div>
                 <div className="flex flex-col items-center p-6 bg-white/5 rounded-xl hover-card shine">
                   <svg className="h-10 w-10 text-blue-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                   </svg>
-                  <p className="mt-4 font-medium text-white">Modern Stack</p>
+                  <p className="mt-4 font-medium text-white">{t('modernStackTitle')}</p>
                 </div>
               </div>
             </div>
