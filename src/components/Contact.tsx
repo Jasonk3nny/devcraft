@@ -30,10 +30,10 @@ export default function Contact() {
         'r66fmgBXBFoblo2OT'
       );
 
-      toast.success('Message sent successfully!');
+      toast.success(t('messageSent'));
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
-      toast.error('Failed to send message. Please try again.');
+      toast.error(t('messageError'));
       console.error('EmailJS Error:', error);
     } finally {
       setIsLoading(false);
