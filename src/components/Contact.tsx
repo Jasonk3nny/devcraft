@@ -20,14 +20,14 @@ export default function Contact() {
 
     try {
       await emailjs.send(
-        'service_w7772br', // EmailJS service ID
-        'template_km5k77l', // Replace with your EmailJS template ID
+        'service_w7772br',
+        'template_km5k77l',
         {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
         },
-        'r66fmgBXBFoblo2OT' // EmailJS public key
+        'r66fmgBXBFoblo2OT'
       );
 
       toast.success('Message sent successfully!');
@@ -48,44 +48,44 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-800">
       <Toaster position="top-right" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <div className="text-center">
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
               {t('contactTitle')}
             </h2>
-            <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
+            <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500 dark:text-gray-400">
               {t('contactSubtitle')}
             </p>
           </div>
         </AnimatedSection>
 
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <AnimatedSection className="bg-white rounded-lg shadow-lg p-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">{t('contactInfo')}</h3>
+          <AnimatedSection className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">{t('contactInfo')}</h3>
             <div className="space-y-6">
               <div className="flex items-center space-x-4">
-                <Mail className="h-6 w-6 text-blue-600" />
-                <span className="text-gray-600">jasonkenny@duck.com</span>
+                <Mail className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                <span className="text-gray-600 dark:text-gray-300">jasonkenny@duck.com</span>
               </div>
               <div className="flex items-center space-x-4">
-                <Phone className="h-6 w-6 text-blue-600" />
-                <span className="text-gray-600">+43 6605503992</span>
+                <Phone className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                <span className="text-gray-600 dark:text-gray-300">+43 6605503992</span>
               </div>
               <div className="flex items-center space-x-4">
-                <MapPin className="h-6 w-6 text-blue-600" />
-                <span className="text-gray-600">Salzburg, Austria</span>
+                <MapPin className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                <span className="text-gray-600 dark:text-gray-300">Salzburg, Austria</span>
               </div>
             </div>
 
             <div className="mt-8">
-              <h4 className="text-lg font-semibold text-gray-900 mb-4">{t('followMe')}</h4>
+              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">{t('followMe')}</h4>
               <div className="flex space-x-4">
                 <a 
                   href="#" 
-                  className="text-gray-400 hover:text-blue-600 transition-colors duration-300"
+                  className="text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
                   aria-label="Twitter"
                 >
                   <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -94,7 +94,7 @@ export default function Contact() {
                 </a>
                 <a 
                   href="#" 
-                  className="text-gray-400 hover:text-blue-600 transition-colors duration-300"
+                  className="text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
                   aria-label="GitHub"
                 >
                   <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -103,7 +103,7 @@ export default function Contact() {
                 </a>
                 <a 
                   href="#" 
-                  className="text-gray-400 hover:text-blue-600 transition-colors duration-300"
+                  className="text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
                   aria-label="LinkedIn"
                 >
                   <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -115,9 +115,9 @@ export default function Contact() {
           </AnimatedSection>
 
           <AnimatedSection>
-            <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-lg p-8 space-y-6">
+            <form onSubmit={handleSubmit} className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8 space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                  {t('name')}
                 </label>
                 <input
@@ -126,12 +126,12 @@ export default function Contact() {
                   id="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                   {t('email')}
                 </label>
                 <input
@@ -140,12 +140,12 @@ export default function Contact() {
                   id="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
                   {t('message')}
                 </label>
                 <textarea
@@ -154,14 +154,14 @@ export default function Contact() {
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                  className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 shadow-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:text-white"
                   required
                 ></textarea>
               </div>
               <button
                 type="submit"
                 disabled={isLoading}
-                className="w-full flex justify-center items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+                className="w-full flex justify-center items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
               >
                 {isLoading ? (
                   <>

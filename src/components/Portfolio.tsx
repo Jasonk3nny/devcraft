@@ -28,14 +28,14 @@ export default function Portfolio() {
   ];
 
   return (
-    <section id="portfolio" className="py-20 bg-gray-50">
+    <section id="portfolio" className="py-20 bg-gray-50 dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
           <div className="text-center">
-            <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
+            <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
               {t('portfolioTitle')}
             </h2>
-            <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
+            <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500 dark:text-gray-400">
              {t('portfolioSubtitle')}
             </p>
           </div>
@@ -45,7 +45,7 @@ export default function Portfolio() {
           {projects.map((project, index) => (
             <AnimatedSection
               key={index}
-              className="group relative bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-500 hover:-translate-y-1 hover:shadow-xl"
+              className="group relative bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden transform transition duration-500 hover:-translate-y-1 hover:shadow-xl"
             >
               <div className="relative h-48 w-full overflow-hidden">
                 <img
@@ -60,13 +60,13 @@ export default function Portfolio() {
                 </div>
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-bold text-gray-900">{t(project.title)}</h3>
-                <p className="mt-2 text-gray-600">{t(project.description)}</p>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white">{t(project.title)}</h3>
+                <p className="mt-2 text-gray-600 dark:text-gray-300">{t(project.description)}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {project.tags.map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
-                      className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-blue-100 text-blue-800"
+                      className="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"
                     >
                       {tag}
                     </span>
