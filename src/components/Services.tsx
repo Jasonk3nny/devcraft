@@ -12,7 +12,7 @@ export default function Services() {
         <AnimatedSection>
           <div className="text-center">
             <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
-              <span className="text-gradient">{t('servicesTitle')}</span>
+              {t('servicesTitle')}
             </h2>
             <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500 dark:text-gray-400">
               {t('servicesSubtitle')}
