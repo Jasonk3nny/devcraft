@@ -21,7 +21,8 @@ export default function About() {
         </AnimatedSection>
 
         <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <AnimatedSection className="relative">
+          <AnimatedSection className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
             <div className="relative">
               <div className="aspect-w-3 aspect-h-4">
                 <img
@@ -39,8 +40,8 @@ export default function About() {
             </div>
           </AnimatedSection>
 
-          <AnimatedSection className="space-y-8">
-            <div className="prose prose-lg">
+          <div className="space-y-8">
+            <AnimatedSection className="prose prose-lg">
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{t('aboutIntroduction')}</h3>
               <p className="text-gray-600 dark:text-gray-300 mt-4">
                 {t('aboutDescription')}
@@ -48,40 +49,55 @@ export default function About() {
               <p className="text-gray-600 dark:text-gray-300 mt-4">
                 {t('aboutDescription2')}
               </p>
-            </div>
+            </AnimatedSection>
 
             <div className="grid grid-cols-2 gap-6">
-              <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl">
-                <Globe className="h-8 w-8 text-blue-600 dark:text-blue-400 mb-4" />
-                <h4 className="font-semibold text-gray-900 dark:text-white">{t('aboutFeature1Title')}</h4>
-                <p className="text-gray-600 dark:text-gray-300 mt-2">{t('aboutFeature1Desc')}</p>
-              </div>
-              <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl">
-                <Coffee className="h-8 w-8 text-blue-600 dark:text-blue-400 mb-4" />
-                <h4 className="font-semibold text-gray-900 dark:text-white">{t('aboutFeature2Title')}</h4>
-                <p className="text-gray-600 dark:text-gray-300 mt-2">{t('aboutFeature2Desc')}</p>
-              </div>
-              <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl">
-                <Laptop className="h-8 w-8 text-blue-600 dark:text-blue-400 mb-4" />
-                <h4 className="font-semibold text-gray-900 dark:text-white">{t('aboutFeature3Title')}</h4>
-                <p className="text-gray-600 dark:text-gray-300 mt-2">{t('aboutFeature3Desc')}</p>
-              </div>
-              <div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-xl">
-                <Code2 className="h-8 w-8 text-blue-600 dark:text-blue-400 mb-4" />
-                <h4 className="font-semibold text-gray-900 dark:text-white">{t('aboutFeature4Title')}</h4>
-                <p className="text-gray-600 dark:text-gray-300 mt-2">{t('aboutFeature4Desc')}</p>
-              </div>
+              <AnimatedSection className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                <div className="relative bg-gray-50 dark:bg-gray-800 p-6 rounded-xl hover-card">
+                  <Globe className="h-8 w-8 text-blue-600 dark:text-blue-400 mb-4" />
+                  <h4 className="font-semibold text-gray-900 dark:text-white">{t('aboutFeature1Title')}</h4>
+                  <p className="text-gray-600 dark:text-gray-300 mt-2">{t('aboutFeature1Desc')}</p>
+                </div>
+              </AnimatedSection>
+
+              <AnimatedSection className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                <div className="relative bg-gray-50 dark:bg-gray-800 p-6 rounded-xl hover-card">
+                  <Coffee className="h-8 w-8 text-blue-600 dark:text-blue-400 mb-4" />
+                  <h4 className="font-semibold text-gray-900 dark:text-white">{t('aboutFeature2Title')}</h4>
+                  <p className="text-gray-600 dark:text-gray-300 mt-2">{t('aboutFeature2Desc')}</p>
+                </div>
+              </AnimatedSection>
+
+              <AnimatedSection className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                <div className="relative bg-gray-50 dark:bg-gray-800 p-6 rounded-xl hover-card">
+                  <Laptop className="h-8 w-8 text-blue-600 dark:text-blue-400 mb-4" />
+                  <h4 className="font-semibold text-gray-900 dark:text-white">{t('aboutFeature3Title')}</h4>
+                  <p className="text-gray-600 dark:text-gray-300 mt-2">{t('aboutFeature3Desc')}</p>
+                </div>
+              </AnimatedSection>
+
+              <AnimatedSection className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                <div className="relative bg-gray-50 dark:bg-gray-800 p-6 rounded-xl hover-card">
+                  <Code2 className="h-8 w-8 text-blue-600 dark:text-blue-400 mb-4" />
+                  <h4 className="font-semibold text-gray-900 dark:text-white">{t('aboutFeature4Title')}</h4>
+                  <p className="text-gray-600 dark:text-gray-300 mt-2">{t('aboutFeature4Desc')}</p>
+                </div>
+              </AnimatedSection>
             </div>
 
-            <div className="flex flex-wrap gap-4">
+            <AnimatedSection className="flex flex-wrap gap-4">
               <div className="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">React</div>
               <div className="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">TypeScript</div>
               <div className="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">Node.js</div>
               <div className="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">Pimcore</div>
               <div className="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">PHP</div>
               <div className="px-4 py-2 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm font-medium">TailwindCSS</div>
-            </div>
-          </AnimatedSection>
+            </AnimatedSection>
+          </div>
         </div>
       </div>
     </section>

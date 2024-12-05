@@ -17,6 +17,18 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Prevent scroll when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
+
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
       isScrolled ? 'bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg' : 'bg-transparent'
@@ -47,29 +59,74 @@ export default function Navbar() {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={`inline-flex items-center justify-center p-2 rounded-md ${
                 isScrolled ? 'text-gray-900 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400' : 'text-white hover:text-blue-200'
-              }`}
+              } transition-colors duration-300`}
+              aria-label="Toggle menu"
             >
-              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              <div className="relative w-6 h-6">
+                <span className={`absolute block h-0.5 w-6 transform transition-all duration-300 ease-out ${
+                  isMenuOpen ? 'rotate-45 translate-y-2.5' : '-translate-y-2'
+                } ${isScrolled ? 'bg-gray-900 dark:bg-white' : 'bg-white'}`}></span>
+                <span className={`absolute block h-0.5 w-6 transform transition-all duration-300 ease-out ${
+                  isMenuOpen ? 'opacity-0' : 'opacity-100'
+                } ${isScrolled ? 'bg-gray-900 dark:bg-white' : 'bg-white'}`}></span>
+                <span className={`absolute block h-0.5 w-6 transform transition-all duration-300 ease-out ${
+                  isMenuOpen ? '-rotate-45 -translate-y-2.5' : 'translate-y-2'
+                } ${isScrolled ? 'bg-gray-900 dark:bg-white' : 'bg-white'}`}></span>
+              </div>
             </button>
           </div>
         </div>
       </div>
 
-      {isMenuOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white dark:bg-gray-900 shadow-lg">
-            <a href="#home" className="text-gray-900 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium">{t('home')}</a>
-            <a href="#services" className="text-gray-900 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium">{t('services')}</a>
-            <a href="#portfolio" className="text-gray-900 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium">{t('portfolio')}</a>
-            <a href="#about" className="text-gray-900 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 block px-3 py-2 rounded-md text-base font-medium">{t('about')}</a>
-            <a href="#contact" className="bg-blue-600 text-white block px-3 py-2 rounded-md text-base font-medium">{t('contact')}</a>
-            <div className="flex items-center space-x-4 px-3 py-2">
+      <div className={`fixed inset-0 bg-gray-900/95 dark:bg-gray-950/95 backdrop-blur-sm transition-all duration-300 ease-in-out md:hidden ${
+        isMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full pointer-events-none'
+      }`}>
+        <div className={`h-full flex flex-col justify-center transition-all duration-500 transform ${
+          isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}>
+          <div className="px-4 pt-2 pb-3 space-y-6 sm:px-3 text-center">
+            <a 
+              href="#home" 
+              onClick={() => setIsMenuOpen(false)}
+              className="block text-2xl font-medium text-white hover:text-blue-400 transform transition-all duration-300 hover:scale-110"
+            >
+              {t('home')}
+            </a>
+            <a 
+              href="#services" 
+              onClick={() => setIsMenuOpen(false)}
+              className="block text-2xl font-medium text-white hover:text-blue-400 transform transition-all duration-300 hover:scale-110"
+            >
+              {t('services')}
+            </a>
+            <a 
+              href="#portfolio" 
+              onClick={() => setIsMenuOpen(false)}
+              className="block text-2xl font-medium text-white hover:text-blue-400 transform transition-all duration-300 hover:scale-110"
+            >
+              {t('portfolio')}
+            </a>
+            <a 
+              href="#about" 
+              onClick={() => setIsMenuOpen(false)}
+              className="block text-2xl font-medium text-white hover:text-blue-400 transform transition-all duration-300 hover:scale-110"
+            >
+              {t('about')}
+            </a>
+            <a 
+              href="#contact" 
+              onClick={() => setIsMenuOpen(false)}
+              className="block text-2xl font-medium text-white hover:text-blue-400 transform transition-all duration-300 hover:scale-110"
+            >
+              {t('contact')}
+            </a>
+            <div className="flex items-center justify-center space-x-4 pt-6">
               <ThemeSwitcher />
               <LanguageSwitcher />
             </div>
           </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 }
